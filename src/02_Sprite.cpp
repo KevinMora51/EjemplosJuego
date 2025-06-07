@@ -20,9 +20,9 @@ int main()
     sf::Clock clock;
     float frameTime = 0.1f; // Tiempo entre cada frame en segundos
     int currentFrame = 0;
-    int numFrames = 4; // Número total de frames en la animación
-    int frameWidth = 32;
-    int frameHeight = 32;
+    int numFrames = 8; // Número total de frames en la animación
+    int frameWidth = 250;
+    int frameHeight = 270;
 
     while (window.isOpen())
     {
@@ -40,7 +40,7 @@ int main()
         if (clock.getElapsedTime().asSeconds() >= frameTime)
         {
             currentFrame = (currentFrame + 1) % numFrames;
-            sprite.setTextureRect(sf::IntRect((currentFrame * 64)+17, 133, 64, 36));
+            sprite.setTextureRect(sf::IntRect((currentFrame * 250)+45, 58, 250, 270));
             clock.restart();
         }
 
