@@ -59,14 +59,15 @@
             y = window.getSize().y - bounds.height;
             dy = -dy;
         }
-        window.clear();
+        window.clear(sf::Color::White); 
 
-        sprite.setPosition(x, y); // Asegura la posición correcta
+        sprite.setPosition(x, y);
 
         window.draw(sprite);
 
         
         window.display();
+        
     }
     return 0;
  }
