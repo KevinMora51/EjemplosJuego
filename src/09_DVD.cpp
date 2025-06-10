@@ -1,64 +1,72 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
+ int main()
+ {
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Image");
 
-// este es el main
-int main()
-{
-    sf::RenderWindow w(sf::VideoMode(800, 600), "DVD xd");
-
-    sf::Texture t;
-    if (!t.loadFromFile("./assets/images/DVD.png"))
+    sf::Texture texture;
+    if (!texture.loadFromFile("./assets/images/DVD.png"))
     {
-        // no jalo
-        return 123;
+        
+        return -1;
     }
-    sf::Sprite s(t);
+    sf::Sprite sprite(texture);
 
-    // variables random
-    float a = 50, b = 50;
-    float dx = 1, dy = 0.7;
-    auto ws = w.getSize();
-    auto sb = s.getLocalBounds();
+    float x =100;
+    float y=100;
 
-    while (w.isOpen())
+    float dx = 0.1; // velocidad más lenta
+    float dy = 0.1; // velocidad más lenta
+
+   
+    while (window.isOpen())
     {
-        sf::Event e;
-        while (w.pollEvent(e))
+        
+        sf::Event event;
+        while (window.pollEvent(event))
         {
-            if (e.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed)
             {
-                w.close();
+                
+                window.close();
             }
         }
 
-        // mover
-        a += dx;
-        b += dy;
+        x += dx;
+        y += dy;
 
-        // rebote loco
-        if (a < 0) {
-            a = 0;
+        // Obtén los límites actualizados del sprite en la posición nueva
+        sprite.setPosition(x, y);
+        sf::FloatRect bounds = sprite.getGlobalBounds();
+
+        if (x < 0)
+        {
+            x = 0;
             dx = -dx;
         }
-        if (a + sb.width > ws.x) {
-            a = ws.x - sb.width;
+
+        if (x + bounds.width > window.getSize().x)
+        {
+            x = window.getSize().x - bounds.width;
             dx = -dx;
         }
-        if (b < 0) {
-            b = 0;
+        if (y < 0)
+        {
+            y = 0;
             dy = -dy;
         }
-        if (b + sb.height > ws.y) {
-            b = ws.y - sb.height;
+        if (y + bounds.height > window.getSize().y)
+        {
+            y = window.getSize().y - bounds.height;
             dy = -dy;
         }
+        window.clear();
 
-        s.setPosition(a, b);
+        sprite.setPosition(x, y); // Asegura la posición correcta
 
-        w.clear();
-        w.draw(s);
-        w.display();
-        sf::sleep(sf::milliseconds(5)); // zzz
+        window.draw(sprite);
+
+        
+        window.display();
     }
-    return 7;
-}
+    return 0;
+ }
