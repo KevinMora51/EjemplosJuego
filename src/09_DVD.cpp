@@ -11,11 +11,11 @@
     }
     sf::Sprite sprite(texture);
 
-    float x =100;
-    float y=100;
+    float x =50;
+    float y=50;
 
-    float dx = 0.1; // velocidad más lenta
-    float dy = 0.1; // velocidad más lenta
+    float dx = 0.5; 
+    float dy = 0.5; 
 
    
     while (window.isOpen())
@@ -34,7 +34,7 @@
         x += dx;
         y += dy;
 
-        // Obtén los límites actualizados del sprite en la posición nueva
+        
         sprite.setPosition(x, y);
         sf::FloatRect bounds = sprite.getGlobalBounds();
 
