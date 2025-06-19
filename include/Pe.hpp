@@ -4,7 +4,7 @@ class Pe
 private:
     sf::CircleShape circle;
 public:
-    Pe() : circle(50) { // radio 50
+    Pe() : circle(38) { 
         circle.setFillColor(sf::Color::Green);
         circle.setPosition(400, 300);
     }
