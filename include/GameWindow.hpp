@@ -20,8 +20,9 @@ public:
         window.display();
     }
 
-    void draw(sf::Shape& shape) {
-        window.draw(shape);
+    // Cambia este método para aceptar cualquier sf::Drawable
+    void draw(const sf::Drawable& drawable) {
+        window.draw(drawable);
     }
 
     bool pollEvent(sf::Event& event) {
