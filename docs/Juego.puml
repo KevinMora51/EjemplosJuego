@@ -1,8 +1,28 @@
 @startuml
+Juego --> "2"Jugador
+Juego --> Pe
+Pe -|> Pelota
+Jugador o-- PJ1
+Jugador o-- PJ2
+PJ1 -|> Rectangulo
+PJ2 -|> Rectangulo
+
+Class Rectangulo
 class Juego
-class jugador 
+class Jugador 
 Class Pe
 Class Pelota
 class PJ1
 class PJ2
+
+Class PJ1{
+    + Mover (Rectangulo)
+}
+Class PJ2{
+    + Mover (Rectangulo)
+}
+class Pelota{
+    + Mover (circulo)
+
+}
 @enduml

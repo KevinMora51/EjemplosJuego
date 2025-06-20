@@ -1,15 +1,17 @@
+#pragma once
 #include <SFML/Graphics.hpp>
-class Pe
-{
+
+class Pe {
 private:
-    sf::CircleShape circle;
+    sf::CircleShape shape;
 public:
-    Pe() : circle(38) { 
-        circle.setFillColor(sf::Color::Green);
-        circle.setPosition(400, 300);
+    Pe() {
+        shape.setRadius(25.f);
+        shape.setFillColor(sf::Color::White);
+        shape.setPosition(0.f, 0.f);
     }
 
     sf::CircleShape& getShape() {
-        return circle;
+        return shape;
     }
 };

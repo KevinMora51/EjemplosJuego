@@ -1,3 +1,4 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include "../include/PJ1.hpp"
 #include "../include/PJ2.hpp"
@@ -6,6 +7,7 @@
 #include "../include/Pelota.hpp"
 
 class Juego {
+private:
     sf::RenderWindow window;
     PJ1 pj1;
     PJ2 pj2;
@@ -20,7 +22,9 @@ public:
     Juego() :
         window(sf::VideoMode(800, 600), "SFML Window"),
         pj1(), pj2(), pe(),
-        jugador1(pj1.getShape()), jugador2(pj2.getShape()), pelota(pe.getShape()),
+        jugador1(pj1.getShape()), 
+        jugador2(pj2.getShape()),
+        pelota(pe.getShape()),
         esperando(false)
     {
         startX = window.getSize().x / 2.0f - pelota.getR();
@@ -66,7 +70,7 @@ public:
 
     void dibujar() {
         window.clear();
-        window.draw(jugador1.get());
+        window.draw(jugador1.get()); 
         window.draw(jugador2.get());
         window.draw(pelota.get());
         window.display();
