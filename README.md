@@ -23,21 +23,33 @@ Por ejemplo para ejecutar '00_Ventana.cpp' correr el comando en la terminal de v
 
 > make run00_Ventana
 
-## Errores comunes
-- [Los diagramas de PUML no se visualizan bien]()
 
-## Buenas Practicas
-- [Como Crear un buen readme](https://www.makeareadme.com/)
-- [Patrones de diseño](https://refactoring.guru/es/design-patterns)
-- [Como hacer commits semanticos]()
-- [Como estructurar un proyecto]()
-- [Que tipos de licencias existen]()
 
-## Tutoriales Github
-- [Creacion de un repositorio]()
-- [Como colaborar en un proyecto]()
-- [Solicitar developer pack]()
 
-## Recursos Gratis
-- [Fuentes de texto gratis](https://www.dafont.com/es/)
-- [Recursos gratis de Videojuegos](https://opengameart.org/)
+# Juego Pong en SFML
+
+Este proyecto implementa un juego tipo Pong usando la biblioteca [SFML](https://www.sfml-dev.org/).
+
+## Archivos principales
+
+- **Juego.hpp / Juego.cpp**: Contienen la lógica principal del juego, el bucle de eventos, el renderizado y la gestión de colisiones.
+- **PJ1.hpp, PJ2.hpp**: Que son los jugadores/Rectangulos.
+- **Pe.hpp**:Es la pelota.
+- **Jugador.hpp, Pelota.hpp**: Clases para el movimiento da los jugadores y la pelota.
+
+## Cómo jugar
+
+- **Jugador 1**: Usa las teclas `W` (arriba) y `S` (abajo).
+- **Jugador 2**: Usa las flechas `Arriba` y `Abajo`.
+- Cuando la pelota sale de la pantalla, presiona `R` para reiniciar.
+
+## Requisitos
+
+- [SFML 2.x](https://www.sfml-dev.org/download.php)
+
+
+## Compilación
+
+Este juego se puede ejcutar escribiendo en la terminal make runJuego
+
+

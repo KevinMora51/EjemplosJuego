@@ -64,6 +64,7 @@ public:
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
                 pelota.setPos(startX, startY);
                 esperando = false;
+                
             }
         }
     }
