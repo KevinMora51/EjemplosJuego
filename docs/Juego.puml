@@ -1,0 +1,8 @@
+@startuml
+class Juego
+class jugador 
+Class Pe
+Class Pelota
+class PJ1
+class PJ2
+@enduml
